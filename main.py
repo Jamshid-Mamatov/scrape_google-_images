@@ -22,9 +22,9 @@ service = ChromeService(executable_path=ChromeDriverManager().install())
 
 driver = webdriver.Chrome(service=service)
 
-SAVE_FOLDER = 'data_bicycle/'
+SAVE_FOLDER = 'titul/'
 
-GOOGLE_IMAGES = 'https://www.google.com/search?q=bicycle&sxsrf=APwXEdcZM9OEyHxhHlJH2tp8RvD3s3r8eg:1683912252628&source=lnms&tbm=isch&sa=X&ved=2ahUKEwishpr9pfD-AhVp_SoKHYhVAQEQ_AUoAXoECAEQAw'
+GOOGLE_IMAGES = 'https://www.google.com/search?q=titul%20varaqasi&tbm=isch&hl=en&tbs=rimg:CWrZwx1KN5tUYVSpDED7jPWRsgIMCgIIABAAOgQIABAAwAIA&sa=X&ved=0CB4QuIIBahcKEwjAvOeqnf7-AhUAAAAAHQAAAAAQBw&biw=1349&bih=625'
 
 driver.get(GOOGLE_IMAGES)
 
@@ -44,7 +44,7 @@ for i in range(2):
     for image in image_elements: 
         if (image.get_attribute('src') is not None):
             my_image = image.get_attribute('src').split('data:image/jpeg;base64,')
-            filename = SAVE_FOLDER + 'wheel'+str(counter)+'.jpeg'
+            filename = SAVE_FOLDER + 'titul_varaq'+str(counter)+'.jpeg'
             
             if(len(my_image) >1): 
                 with open(filename, 'wb') as f: 
